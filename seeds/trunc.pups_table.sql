@@ -1,0 +1,4 @@
+TRUNCATE
+  pups,
+  users
+  RESTART IDENTITY CASCADE;

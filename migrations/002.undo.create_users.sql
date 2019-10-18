@@ -1,0 +1,4 @@
+ALTER TABLE pups
+    DROP COLUMN IF EXISTS owner;
+
+DROP TABLE IF EXISTS users;
