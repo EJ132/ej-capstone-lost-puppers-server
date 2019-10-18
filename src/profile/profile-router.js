@@ -15,7 +15,6 @@ ProfileRouter
         )
         .then(user => {
             res.json(ProfileService.serializeProfile(user))
-            console.log(user)
         })
         .catch(next)
     })

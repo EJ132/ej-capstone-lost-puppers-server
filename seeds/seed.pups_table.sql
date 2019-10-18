@@ -2,22 +2,21 @@ BEGIN;
 
 TRUNCATE
   pups,
-  users
+  users,
+  pup_comments
   RESTART IDENTITY CASCADE;
 
 INSERT INTO users(fullname, user_name, password)
 VALUES
-('EJ Gonzalez', 'EJ132', '$2a$12$RZAgvfQYvIZkiGcXJPByk.zSJBzbvJApUr3V2Szks7tg2zjxjDLSW'),
-('Paul Blart', 'PB&J23', '$2a$12$JYXLCUqN/sR7./P/qQhBo.vV4jqLcdqYe/052.JpsL.71ElAMWeFO'),
-('Russell Wilson', 'Speedy10', '$2a$12$vGyd676XVRJRi16/A.wgt.OSrXk5lw.nXmrVjabEpZi17VdNtZRFy');
+('EJ Gonzalez', 'EJ132', '$2a$12$RZAgvfQYvIZkiGcXJPByk.zSJBzbvJApUr3V2Szks7tg2zjxjDLSW');
 
 INSERT INTO pups (name, image, category, description, owner, zipcode)
 VALUES
-('Chico', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 'Small', 'Brown dog very loving and likes squeky toys', 2,'90260'),
-('Chico Number 2', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 'Medium', 'Brown dog very loving and likes squeky toys', 3,'90260'),
+('Chico', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 'Small', 'Brown dog very loving and likes squeky toys', 1,'90260'),
+('Chico Number 2', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 'Medium', 'Brown dog very loving and likes squeky toys', 1,'90260'),
 ('Chico Number 3', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 'Large', 'Brown dog very loving and likes squeky toys', 1,'90220'),
 ('Chico Number 4', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 'Small', 'Brown dog very loving and likes squeky toys', 1, '90255'),
-('Chico Number 5', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 'Medium', 'Brown dog very loving and likes squeky toys', 2, '90255');
+('Chico Number 5', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 'Medium', 'Brown dog very loving and likes squeky toys', 1, '90255');
 
 INSERT INTO pup_comments (
   comment,
@@ -32,27 +31,27 @@ INSERT INTO pup_comments (
   (
     'Found him, here is my number: 310-310-3210',
     1,
-    2
+    1
   ),
   (
     'All the other comments are obviously insane, but this thing is actually pretty amazing.',
     1,
-    2
+    1
   ),
   (
     'When life gives you lemons, trade them for this thing.',
     1,
-    3
+    1
   ),
   (
     'This cured my psoriasis, but left me unable to tell the difference between the taste of squash and the concept of increasing.',
     2,
-    3
+    1
   ),
   (
     'I think I swallowed a bug.',
     2,
-    2
+    1
   ),
   (
     'I have not used it or even seen it, and I do not actually know what it is. I do not know why I am writing this review, how I got here, or what my name is. Three stars!',
@@ -62,17 +61,17 @@ INSERT INTO pup_comments (
   (
     'Ew.',
     3,
-    2
+    1
   ),
   (
     'I heard about this one time at band camp.',
     4,
-    3
+    1
   ),
   (
     'big time many goodness!!!',
     4,
-    2
+    1
   ),
   (
     'Iste, architecto obcaecati tenetur quidem voluptatum ipsa quam!',
@@ -87,17 +86,17 @@ INSERT INTO pup_comments (
   (
     'Great holiday present for extraterrestrials (only the kind with the lightbulb heads).',
     5,
-    2
+    1
   ),
   (
     'It does not say this on the label, but this thing can be used to summon rain on the spring equinox with the proper incantation.',
     5,
-    3
+    1
   ),
   (
     'Do not believe the hype!',
     5,
-    2
+    1
   ),
   (
     'I would rather have a shoulder rub.',
@@ -107,12 +106,12 @@ INSERT INTO pup_comments (
   (
     'I heard this has lead in it! Run! RRUUUUUUNNNN!',
     2,
-    3
+    1
   ),
   (
     'This would not fit inside the cabin of my horse-and-buggy, but it was a useful bribe after the string cheese incident.',
     1,
-    3
+    1
   ),
   (
     'Slightly better than waking up deep in the forests of Madagascar and having no idea how you got there, but not THAT much better.',
@@ -122,7 +121,7 @@ INSERT INTO pup_comments (
   (
     'Octopii give it eight tentacles up!',
     2,
-    2
+    1
   );
 
 COMMIT;
