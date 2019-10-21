@@ -41,6 +41,13 @@ const PupsService = {
         .delete()
     },
 
+    updatePup(db, id, newPup) {
+      return db('pups')
+        .where('id', id)
+        .update(newPup)
+        .returning('*')
+    },
+
     serializePups(pups) {
         return pups.map(this.serializePup)
     },

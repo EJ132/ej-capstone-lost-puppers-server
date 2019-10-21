@@ -52,6 +52,28 @@ PupsRouter
       })
       .catch(next)
   })
+  .patch(jsonBodyParser, (req, res, next) => {
+    const { name, description } = req.body
+    const pupToUpdate = { name, description }
+
+    const numberOfValues = Object.values(pupToUpdate).filter(Boolean).length
+    if (numberOfValues === 0)
+      return res.status(400).json({
+        error: {
+          message: `Request body must content either 'name' or 'description'`
+        }
+      })
+
+    PupsService.updatePup(
+      req.app.get('db'),
+      req.params.id,
+      pupToUpdate
+    )
+      .then(updatedPup => {
+        res.status(200).json(updatedPup)
+      })
+      .catch(next)
+  })
 
 PupsRouter
   .route('/:id/comments')
