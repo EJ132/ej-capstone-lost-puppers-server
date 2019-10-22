@@ -1,9 +1,9 @@
-const app = require('../app')
+const app = require('../src/app')
 
 describe('App', () => {
-  it('GET / responds with 200 containing "Hello, world!"', () => {
+  it('GET / responds with 500', () => {
     return supertest(app)
-      .get('/')
-      .expect(200)
+      .get('/api/pups')
+      .expect(500)
   })
 })
