@@ -12,11 +12,11 @@ VALUES
 
 INSERT INTO pups (name, image, lat, long, category, description, owner, zipcode)
 VALUES
-('Chico', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 33.899421, -118.356705, 'Small', 'Brown dog very loving and likes squeky toys', 1,'90260'),
-('Chico Number 2', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 33.913904, -118.349270, 'Medium', 'Brown dog very loving and likes squeky toys', 1,'90260'),
-('Chico Number 3', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 33.914195, -118.366029, 'Large', 'Brown dog very loving and likes squeky toys', 1,'90220'),
-('Chico Number 4', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 33.902627, -118.327773, 'Small', 'Brown dog very loving and likes squeky toys', 1, '90255'),
-('Chico Number 5', 'https://images.unsplash.com/photo-1456318456940-4da16c8fc9bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', 33.891844, -118.349385, 'Medium', 'Brown dog very loving and likes squeky toys', 1, '90255');
+('Chico', 'uploads/boy.png', 33.899421, -118.356705, 'Small', 'Brown dog very loving and likes squeky toys', 1,'90260'),
+('Chico Number 2', 'uploads/boy.png', 33.913904, -118.349270, 'Medium', 'Brown dog very loving and likes squeky toys', 1,'90260'),
+('Chico Number 3', 'uploads/boy.png', 33.914195, -118.366029, 'Large', 'Brown dog very loving and likes squeky toys', 1,'90220'),
+('Chico Number 4', 'uploads/boy.png', 33.902627, -118.327773, 'Small', 'Brown dog very loving and likes squeky toys', 1, '90255'),
+('Chico Number 5', 'uploads/boy.png', 33.891844, -118.349385, 'Medium', 'Brown dog very loving and likes squeky toys', 1, '90255');
 
 INSERT INTO pup_comments (
   comment,
