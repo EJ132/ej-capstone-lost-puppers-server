@@ -66,6 +66,8 @@ const PupsService = {
           description: xss(pupData.description),
           date_created: pupData.date_created,
           image: xss(pupData.image),
+          lat: pupData.lat,
+          long: pupData.long,
           category: pupData.category,
           zipcode: pupData.zipcode,
           owner: pupData.owner
