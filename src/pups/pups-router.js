@@ -2,38 +2,16 @@ const express = require('express')
 const PupsService = require('./pups-service')
 const {requireAuth} = require('../middleware/jwt-auth')
 const jsonBodyParser = express.json()
-const multer = require('multer')
 
-const storage = multer.diskStorage({
-  destination: function(req, file, cb){
-    cb(null, './uploads/');
-  },
-  filename: function(req, file, cb){
-    cb(null, file.originalname);
-  }
-})
+const upload = require('../file-upload')
 
-const fileFilter = (req, file, cb) => {
-    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){
-      cb(null, true)
-    } else {
-      cb(new Error('Please upload a jpeg or png image'), false)
-    }
-};
-
-const upload = multer({
-  storage: storage, 
-  limits: {fileSize: 1024 * 1024 * 5},
-  fileFilter: fileFilter
-  }
-);
 
 const PupsRouter = express.Router()
 
 PupsRouter
   .all(requireAuth)
   .post('/', upload.single('image'), (req, res, next) => {
-    const image = req.file.path
+    const image = req.file.location
     console.log(req.file);
     const {name, lat, long, description, category, zipcode, owner } = req.body
     const newPup = {name, image, description, lat, long, category, zipcode, owner }
