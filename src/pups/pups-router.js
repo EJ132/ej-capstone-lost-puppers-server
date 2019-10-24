@@ -12,7 +12,6 @@ PupsRouter
   .all(requireAuth)
   .post('/', upload.single('image'), (req, res, next) => {
     const image = req.file.location
-    console.log(req.file);
     const {name, lat, long, description, category, zipcode, owner } = req.body
     const newPup = {name, image, description, lat, long, category, zipcode, owner }
     for (const field of ['name', 'lat', 'long', 'description', 'category', 'zipcode', 'owner'])
@@ -20,7 +19,7 @@ PupsRouter
          return res.status(400).json({
            error: `Missing '${field}' in request body`
          })
-
+         
     PupsService.insertPup(
       req.app.get('db'),
       newPup
@@ -30,6 +29,7 @@ PupsRouter
           .status(201)
           .json(PupsService.serializePup(Pup))
       })
+      .catch(err => console.log(err))
 
   })
   .get('/',(req, res, next) => {
