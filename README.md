@@ -1,26 +1,26 @@
-# Express Boilerplate!
+Lost Puppers
 
-This is a boilerplate project used for starting new projects!
+https://lostpuppers.netlify.com/
 
-## Set up
+API Documentation: 
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+POST Features:
+    - '/auth/login' is made for users to login
+    - '/pups' is made for users to post a new pup
+    - '/users' allows user registration
+    - '/comments' is the endpoint where comments are sent
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+GET Features:
+    - '/profile/:user_name' accesses the specific logged in users profile
+    - '/pups' displays all the lost puppers
+    - '/pups/:id' shows a personal page of the specific pup
+    - '/pups/:id/comments' shows the comments that go with the pup page ^^^
 
-## Scripts
+DELETE Feauture: 
+    - '/pups/:id' deletes a certain pup listing
 
-Start the application `npm start`
+PATCH Feature:
+    - '/pups/:id' allows updates to the pup name and description
 
-Start nodemon for the application `npm run dev`
 
-Run the tests `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+For further information feel free to visit this repository: https://github.com/EJ132/ej-capstone-lost-puppers
