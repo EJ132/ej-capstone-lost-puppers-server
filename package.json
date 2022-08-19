@@ -18,7 +18,7 @@
   "dependencies": {
     "@aws-sdk/abort-controller": "^3.127.0",
     "@aws-sdk/client-s3": "^3.150.0",
-    "aws-sdk": "2.1189.0",
+    "aws-sdk": "2.814.0",
     "bcryptjs": "2.4.3",
     "cors": "2.8.5",
     "dotenv": "16.0.1",
